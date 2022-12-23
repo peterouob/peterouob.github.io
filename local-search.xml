@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>機器學習新手村</title>
+    <link href="/2022/12/24/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E6%96%B0%E6%89%8B%E6%9D%91/"/>
+    <url>/2022/12/24/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E6%96%B0%E6%89%8B%E6%9D%91/</url>
+    
+    <content type="html"><![CDATA[<h2 id="線性回歸"><a href="#線性回歸" class="headerlink" title="線性回歸"></a>線性回歸</h2><hr><h3 id="回歸問題是什麼"><a href="#回歸問題是什麼" class="headerlink" title="回歸問題是什麼?"></a>回歸問題是什麼?</h3><ol><li>分類問題<ol><li>到銀行借錢，銀行回答會或不會(明確類別)</li></ol></li><li>回歸問題(有監督算法)<ol><li>到銀行借錢，問銀行能借我多少(一定範圍找尋可能值)</li></ol></li></ol><h3 id="線性回歸例子"><a href="#線性回歸例子" class="headerlink" title="線性回歸例子"></a>線性回歸例子</h3><hr><pre><code class="hljs">x1       x2      y      | Y = x1*θ1 + x2θ*2     </code></pre><p>在數據中添加X0恆等1來方便對線性方程轉換為矩陣</p><p>在機器學習中，所有運算皆使用 <strong>矩陣</strong> </p><table><thead><tr><th>工資</th><th>年齡</th><th>額度</th></tr></thead><tbody><tr><td>4000</td><td>25</td><td>20000</td></tr><tr><td>8000</td><td>30</td><td>70000</td></tr><tr><td>5000</td><td>28</td><td>35000</td></tr><tr><td>7500</td><td>33</td><td>55000</td></tr><tr><td>12000</td><td>40</td><td>85000</td></tr></tbody></table><ol><li>一個例子<ol><li>數據：工資和年齡(2個特徵)</li><li>目標：預測銀行帶給我多少錢(標籤)</li><li>考慮：工資和年齡都會影響最終銀行貸款的結果，那麼他們各自有多大的影響呢？(參數)</li></ol></li><li>由上述Y方程式知道求出 <strong>θ(標籤)</strong> 為目標-&gt;求出解決</li><li>數學來了！<ol><li>假設θ1是年齡參數，θ2是工資參數</li><li>擬合平面h(x)&#x3D;<code>θ0*x0+θ1*x1+θ2*x2</code>(θ0是偏值項)</li><li>將h(x)整合成矩陣表達<code>h(x)=∑(i=0-&gt;n)=θ^Tx</code></li></ol></li><li>誤差(使用i代表任意項)<ol><li>真實值和預測值間肯定具有誤差ϵ</li><li>對於每個樣本 <code>y^(i)=θ^T x^(i)+ ϵ^(i)</code></li></ol></li><li>分析誤差<ol><li></li></ol></li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>http</title>
     <link href="/2022/12/23/http/"/>
     <url>/2022/12/23/http/</url>
