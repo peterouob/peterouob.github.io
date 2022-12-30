@@ -24,7 +24,7 @@
 <meta property="og:description" content="TCP&#x2F;IPapi→懂原理通信,tcp高併發分布式,為服務微服務⇒RPC⇒內核(socket—→IO) ⇒ BIO,NIO,EPOLL1234567891011IO 是連結消息&#x2F;請求可不可以複用連結(多路服用單純是狀態&#x3D;&gt;RW)&#x3D;&gt;連結不能服用根據消息或請求狀態判斷使否有連節假設有一個c(client)有兩個線成,如果同時請求一個服務器,因為HTTP是無狀態&#x3D;&gt;回傳的消">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-12-22T19:48:40.000Z">
-<meta property="article:modified_time" content="2022-12-30T12:59:16.494Z">
+<meta property="article:modified_time" content="2022-12-30T13:05:28.441Z">
 <meta property="article:author" content="Peter Lin">
 <meta property="article:tag" content="網路">
 <meta name="twitter:card" content="summary_large_image">
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.8k words
+          4.9k words
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          33 mins
+          41 mins
         
       </span>
     
@@ -340,7 +340,69 @@
 <p>計算機組成原理</p>
 <figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs excel">按下開機後,第一個程序為內核(硬盤加載進內存)=&gt;內核為程序=&gt;對外管理io設備<br>內核和程序相當於管理層,內核加載網卡後其他程序可以不用手動加載<br><br>開機後,內核加載至內存,cpu執行內核指令後<br>=&gt;內核會把內核所在地址空間至為內核空間,其他空間為用戶空間<br>=&gt;啟動保護模式(用戶空間沒辦法訪問內核空間,但內核空間可以完全訪問用戶空間)=&gt;減少對系統破壞<br><br>但用戶空間的app會用到內核所管理的外部硬件,因此還是需要有辦法訪問內核<br>=&gt;中斷,系統調用<br><br>App產生系統調用而非函數調用,會將函數轉換成系統(調用)=&gt;使用<span class="hljs-built_in">INT</span> <span class="hljs-symbol">x80</span>(軟體中斷)=&gt;訪問內核<br>用戶想要訪問內核都需要調用中斷<br></code></pre></td></tr></table></figure>
 
-<h3 id="dtruss指令"><a href="#dtruss指令" class="headerlink" title="dtruss指令"></a>dtruss指令</h3>
+<h3 id="dtruss指令"><a href="#dtruss指令" class="headerlink" title="dtruss指令"></a>dtruss指令</h3><h1 id="http加密"><a href="#http加密" class="headerlink" title="http加密"></a>http加密</h1><p>如果明文傳輸內容容易被獲得</p>
+<p>C為客戶，S為服務，f為加密函數</p>
+<p>使用對稱加密（如果每個都有k就安全，因此單純非對稱加密並不安全)</p>
+<hr>
+<p>f(k,data)&#x3D;x</p>
+<p>f2(k,x)&#x3D;data</p>
+<p>C-&gt;S 傳輸x</p>
+<p>S解密x得data,也能傳輸給Cx</p>
+<p>K只有一個，所有人都用相同K，容易被破解</p>
+<p>非對稱加密（c對s安全，s對c不安全)</p>
+<hr>
+<p>pk所有人都能拿</p>
+<p>sk只有服務端能拿</p>
+<p>C-&gt;S拿pk</p>
+<p>f(pk,data)&#x3D;y</p>
+<p>f(sk,y)&#x3D;data</p>
+<p>f(sk,data)&#x3D;y’-&gt;被拿到pk，被破解</p>
+<p>f(pk,y’)&#x3D;data</p>
+<p>結合兩種加密（產生中間人問題)</p>
+<hr>
+<p>S有pk,sk</p>
+<p>使用非對稱加密達成協商獲得k</p>
+<p>再使用對稱加密使用k交互數據</p>
+<p>C-&gt;S拿pk</p>
+<p>C加密數據y給S</p>
+<p>S解密數據y，並且將y當非對稱加密k</p>
+<p>S通知服務端新的K</p>
+<p>再使用對稱加密k進行數據交互</p>
+<p>看似安全，但可是</p>
+<hr>
+<p>黑客如果攔截pk,sk</p>
+<p>C拿到黑客的pk，黑客像S請求真實pk</p>
+<p>C傳送數據data給黑客加密，再被攔截</p>
+<p>被黑客用自己的sk攔截，再傳ok(使用對稱加密</p>
+<p>黑客像服務端發送數據(藉由pk加密)請求使用對稱加密，服務端傳送ok</p>
+<p>黑客成為C和S的中間人，獲得所有信息</p>
+<p>解決中間人問題</p>
+<hr>
+<p>因為在第一步被黑客介入，不知道公鑰是否正確</p>
+<p>引入CA (檢查公鑰正確性)，CA具有cpk和csk</p>
+<p>先將pk進行加密</p>
+<p>pk&#x3D;&gt;f(csk ,pk)&#x3D;license給S</p>
+<p>C請求license，得到cpk 就能解密</p>
+<p>但C對CA機構拿cpk 有可能被截獲，因此直接將cpk寫死在操作系統C端</p>
+<p>因此C端能直接對license解密，然後協商k 接著對稱加密，交互信息</p>
+<p>保證pk的絕對安全性</p>
+<p>如果此時還有中間人(黑客</p>
+<p>獲取證書的部分是不可能介入的,license不安全，出現警告且無法訪問</p>
+<p>黑客只拿到pk,當C傳輸時無法解密(需要sk</p>
+<p>對稱+非對稱+CA</p>
+<p>協商過程</p>
+<hr>
+<p>訪問百度</p>
+<p>1 C-&gt;S 支持SSL版本,非對稱算法,隨機數1</p>
+<p>2 S-&gt;C 就用SSL版本,對稱算法,隨機數 2,CA證書</p>
+<p>3 C認證證書</p>
+<p>證書認證成功：</p>
+<p>4 C-&gt;S 隨機數3，hash(1,2)&#x3D;xx</p>
+<p>5 S驗證xx&#x3D;&#x3D;hash(1,2)&#x3D;&gt;隨機數1,2,3生成k</p>
+<p>6 S-&gt;C hash(1,2,4)&#x3D;zz</p>
+<p>7 C hash(1,2,4)&#x3D;&#x3D;zz?&#x3D;&gt;隨1,2,3生成k</p>
+<p>5和7的k會相同</p>
+
                 
               </div>
             
