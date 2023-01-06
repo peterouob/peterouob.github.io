@@ -24,8 +24,19 @@
 <meta property="og:description" content="卷積神經網路起源 卷積神經網路 vs 全聯接神經網路  1234567891011121314151617全聯接會將圖片展開成一為向量-&gt;破懷圖片結構四大要件1.卷積層(Conv Layer)  輸入特徵圖+落干卷積核得到這層輸出，下層輸入2.非線性激勵層(Non-liner Layer)  不使用的話只能達到擬何非線性特徵，而沒達到非線性非類效果以上為核心3.池化層(Pooling Lay">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://peterouob.github.io/images/img1.png">
+<meta property="og:image" content="https://peterouob.github.io/images/img2.png">
+<meta property="og:image" content="https://peterouob.github.io/images/img3.png">
+<meta property="og:image" content="https://peterouob.github.io/images/img4.png">
+<meta property="og:image" content="https://peterouob.github.io/images/img5.png">
+<meta property="og:image" content="https://peterouob.github.io/images/img6.png">
+<meta property="og:image" content="https://peterouob.github.io/images/img7.png">
+<meta property="og:image" content="https://peterouob.github.io/images/img8.png">
+<meta property="og:image" content="https://peterouob.github.io/images/img9.png">
+<meta property="og:image" content="https://peterouob.github.io/images/img10.png">
+<meta property="og:image" content="https://peterouob.github.io/images/img11.jpeg">
+<meta property="og:image" content="https://peterouob.github.io/images/img12.jpeg">
 <meta property="article:published_time" content="2022-12-30T06:14:52.000Z">
-<meta property="article:modified_time" content="2023-01-04T18:18:28.101Z">
+<meta property="article:modified_time" content="2023-01-06T11:34:36.239Z">
 <meta property="article:author" content="Peter Lin">
 <meta property="article:tag" content="CNN">
 <meta name="twitter:card" content="summary_large_image">
@@ -222,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.4k words
+          2.3k words
         
       </span>
     
@@ -233,7 +244,7 @@
         
         
         
-          29 mins
+          19 mins
         
       </span>
     
@@ -297,7 +308,7 @@
 <li>一維例子</li>
 </ol>
 <p>  <code>因為卷積層使用權值共享的原因，導致運算量減少，而假設一張圖上有9在任一位置，對於傳統來說每一個特徵都不一樣，而卷積則因為偏移不變性導致收集特徵皆為一樣</code><br>  <img src="/../images/img1.png" srcset="/img/loading.gif" lazyload><br>  2. 二維例子</p>
-<p>  <code>每個Kernal會生成相對的特徵圖或感受野</code><br>![](..&#x2F;..&#x2F;..&#x2F;截圖 2023-01-05 上午1.05.27.png)</p>
+<p>  <code>每個Kernal會生成相對的特徵圖或感受野</code><br>  <img src="/../images/img2.png" srcset="/img/loading.gif" lazyload></p>
 <h1 id="傳統圖像特徵"><a href="#傳統圖像特徵" class="headerlink" title="傳統圖像特徵"></a>傳統圖像特徵</h1><ol>
 <li>SIFT <em>常用</em></li>
 <li>Spin image</li>
@@ -312,7 +323,7 @@
 <h1 id="卷積神經網路三大結構特性"><a href="#卷積神經網路三大結構特性" class="headerlink" title="卷積神經網路三大結構特性"></a>卷積神經網路三大結構特性</h1><ol>
 <li>局部感受野(Locally Recptive Area)</li>
 <li>權值共享(Shared Weights)</li>
-<li>下採樣(Spatial or Temporal Sub-sampling)&#x3D;&gt;pooling層，減少維度<br>-&gt; 對平移，縮放，扭曲的不變性<br>![](..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;var&#x2F;folders&#x2F;fl&#x2F;17h5krps04n1wlx_l7q1822h0000gn&#x2F;T&#x2F;TemporaryItems&#x2F;NSIRD_screencaptureui_m6t6do&#x2F;截圖 2023-01-05 上午1.14.15.png)<br>深度不可太大-&gt;梯度消失</li>
+<li>下採樣(Spatial or Temporal Sub-sampling)&#x3D;&gt;pooling層，減少維度<br>-&gt; 對平移，縮放，扭曲的不變性<br><img src="/../images/img3.png" srcset="/img/loading.gif" lazyload><br>深度不可太大-&gt;梯度消失</li>
 </ol>
 <h1 id="卷積神經網路構建"><a href="#卷積神經網路構建" class="headerlink" title="卷積神經網路構建"></a>卷積神經網路構建</h1><ol>
 <li>卷積層(Convolutional Layer)<ol>
@@ -325,7 +336,7 @@
 </ul>
 </li>
 <li>每個卷積核同輸入數據卷積運算，形成新的特徵圖</li>
-<li>多少卷積核生成多少張特徵圖<br>  ![](..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;var&#x2F;folders&#x2F;fl&#x2F;17h5krps04n1wlx_l7q1822h0000gn&#x2F;T&#x2F;TemporaryItems&#x2F;NSIRD_screencaptureui_xWxhjj&#x2F;截圖 2023-01-05 上午1.24.49.png)<br>  ![](..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;var&#x2F;folders&#x2F;fl&#x2F;17h5krps04n1wlx_l7q1822h0000gn&#x2F;T&#x2F;TemporaryItems&#x2F;NSIRD_screencaptureui_MAmYWe&#x2F;截圖 2023-01-05 上午1.28.35.png)<br>  ![](..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;var&#x2F;folders&#x2F;fl&#x2F;17h5krps04n1wlx_l7q1822h0000gn&#x2F;T&#x2F;TemporaryItems&#x2F;NSIRD_screencaptureui_3oTCxf&#x2F;截圖 2023-01-05 上午1.30.24.png) </li>
+<li>多少卷積核生成多少張特徵圖<br><img src="/../images/img4.png" srcset="/img/loading.gif" lazyload><br><img src="/../images/img5.png" srcset="/img/loading.gif" lazyload><br><img src="/../images/img6.png" srcset="/img/loading.gif" lazyload></li>
 <li>卷積核(Convolutional kernel)&#x3D;&gt;也可定義為filter<ul>
 <li>同輸入數據進行計算算的2維(1維，3維)算子</li>
 <li>大小(size)用戶定義，深度輸入數據定義</li>
@@ -334,7 +345,7 @@
 <li>kernal設計大小引響參數，一般使用3*3</li>
 </ul>
 </li>
-<li>卷積核組合方式：卷積層(Conv layer)-特徵圖(feature map)<br>![](..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;var&#x2F;folders&#x2F;fl&#x2F;17h5krps04n1wlx_l7q1822h0000gn&#x2F;T&#x2F;TemporaryItems&#x2F;NSIRD_screencaptureui_Uafl7I&#x2F;截圖 2023-01-05 上午1.38.57.png)<br>m和input data的深度(depth)有關，n卷積和數目匹配和後面輸出匹配，3*3造成邊消失。一般來說n都會比m大&#x3D;&gt;得到更多空間維度小，但更高維的表達。</li>
+<li>卷積核組合方式：卷積層(Conv layer)-特徵圖(feature map)<br><img src="/../images/img7.png" srcset="/img/loading.gif" lazyload><br>m和input data的深度(depth)有關，n卷積和數目匹配和後面輸出匹配，3*3造成邊消失。一般來說n都會比m大&#x3D;&gt;得到更多空間維度小，但更高維的表達。</li>
 <li>卷積核關鍵參數<ul>
 <li>卷積核大小<ol>
 <li>奇偶選擇：一般奇數，滿足對稱性。if偶，無法滿足中心對稱，在離散上產生過多問題</li>
@@ -343,8 +354,8 @@
 <li>覆蓋範圍：根據數入數據，根據圖像特徵</li>
 </ol>
 </li>
-<li>步長(stride)：對輸入特徵圖的掃描間隔，對輸出特徵圖的影響，步長不同對於最後生成特徵圖的尺寸也不同&#x3D;&gt;polling融合在卷積層的關鍵就是步長<br>![](..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;var&#x2F;folders&#x2F;fl&#x2F;17h5krps04n1wlx_l7q1822h0000gn&#x2F;T&#x2F;TemporaryItems&#x2F;NSIRD_screencaptureui_djew3X&#x2F;截圖 2023-01-05 上午1.51.02.png)</li>
-<li>邊界擴充(pad)：在計算卷積的過程中，為了允許邊界上的數據也能作為中心參與卷積用算，將邊界進行假定延伸(輸入7*7且希望輸出特徵圖和輸入尺寸一致時使用)&#x3D;&gt;避免邊界一直減少<br> ![](..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;var&#x2F;folders&#x2F;fl&#x2F;17h5krps04n1wlx_l7q1822h0000gn&#x2F;T&#x2F;TemporaryItems&#x2F;NSIRD_screencaptureui_JgZePn&#x2F;截圖 2023-01-05 上午1.54.44.png)</li>
+<li>步長(stride)：對輸入特徵圖的掃描間隔，對輸出特徵圖的影響，步長不同對於最後生成特徵圖的尺寸也不同&#x3D;&gt;polling融合在卷積層的關鍵就是步長<br><img src="/../images/img8.png" srcset="/img/loading.gif" lazyload></li>
+<li>邊界擴充(pad)：在計算卷積的過程中，為了允許邊界上的數據也能作為中心參與卷積用算，將邊界進行假定延伸(輸入7*7且希望輸出特徵圖和輸入尺寸一致時使用)&#x3D;&gt;避免邊界一直減少<br><img src="/../images/img9.png" srcset="/img/loading.gif" lazyload></li>
 <li>卷積核數目(kernal number)：卷積神經網路的寬度，常見參數為(64,128,256)，之所以如此是根據模型的定義，也會讓GPU運行更高效</li>
 </ul>
 </li>
@@ -352,12 +363,54 @@
 <li>卷積核是卷積層基本單位</li>
 <li>卷積核數目，卷積運算步長，pad對卷積層輸出影響</li>
 <li>卷積層參數數目計算</li>
-<li>正向&#x2F;反向卷積運算表達式<br>![](..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;var&#x2F;folders&#x2F;fl&#x2F;17h5krps04n1wlx_l7q1822h0000gn&#x2F;T&#x2F;TemporaryItems&#x2F;NSIRD_screencaptureui_Htaiee&#x2F;截圖 2023-01-05 上午2.05.50.png)</li>
+<li>正向&#x2F;反向卷積運算表達式<br><img src="/../images/img10.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 </li>
 </ol>
 </li>
-<li>其他功能層(池話層，非線性激勵層，歸一化層，切分&#x2F;融合層)</li>
+<li>其他功能層(池話層，非線性激勵層，歸一化層，切分&#x2F;融合層)<br>- 卷積神經網路需要哪些額外功能？<ol>
+<li>非線性激勵：卷積是線性運算，增加非線性描述能力</li>
+<li>降維：特徵圖稀疏，減少數據運算量，保持精度-&gt;pooling，防止過擬何</li>
+<li>歸一化：特徵的scale保持一致，空間上中心化</li>
+<li>區域分割：不同區域進行獨立學習</li>
+<li>區域融合：對分開的區域合併，方便信息融合</li>
+<li>增維：增加圖片生成或探測任務中空間信息<ul>
+<li>非線性激勵層(None-linear activation layer)</li>
+<li>ReLu函數:<br> <img src="/../images/img11.jpeg" srcset="/img/loading.gif" lazyload></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>池化層(pooling layer)<ol>
+<li>數據降維，方便計算(max,ave)，maxpooling最大值化，ave平均值化</li>
+<li>池化過程中，每張特徵圖單獨降維<br> <img src="/../images/img12.jpeg" srcset="/img/loading.gif" lazyload></li>
+</ol>
+</li>
+<li>歸一化層(Normalization Layer)<ul>
+<li>批量歸一化：Batch Normalization(BN)-&gt;必須在非線性激勵層前面：</li>
+</ul>
+<ol>
+<li>使用原因：特徵數Scale不一致</li>
+<li>好處：加速訓練，提高準度</li>
+</ol>
+<ul>
+<li>鄰境歸一化：Local Response Normalization：<ul>
+<li>與BN區別<ol>
+<li>BN依據mini batch的數據，鄰境歸一僅需自身</li>
+<li>BN訓練中有學習參數</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>切分層(Slice Layer)-&gt;在某些應用中，希望獨立對某些區域單獨學習，而不過卷積層：<ul>
+<li>好處：學習多套參數，更強的特徵描述能力</li>
+</ul>
+</li>
+<li>融合層(Merge Layer)-&gt;對獨立進行特徵學習的分支進行融合，構建高效而精簡的特徵組合</li>
+</ul>
+</li>
 <li>相關推倒</li>
 <li>使用要點</li>
 </ol>
