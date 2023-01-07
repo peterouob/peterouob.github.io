@@ -16,20 +16,23 @@
   <meta name="author" content="Peter Lin">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
-<meta property="og:title" content="從阿拉伯數字辨識能力了解CNN">
-<meta property="og:url" content="https://peterouob.github.io/2022/12/25/%E5%BE%9E%E9%98%BF%E6%8B%89%E4%BC%AF%E6%95%B8%E5%AD%97%E8%BE%A8%E8%AD%98%E8%83%BD%E5%8A%9B%E4%BA%86%E8%A7%A3CNN/index.html">
+    <meta name="description" content="讀取圖片，並獲得圖片屬性及融合RGB123456789101112131415161718192021import cv2import numpy as npimg &#x3D; cv2.imread(文件名,[,参数])参数(1) cv2.IMREAD_UNCHANGED (图像不可变)参数(2) cv2.IMREAD_GRAYSCALE (灰度图像)参数(3) cv2.IMREAD_COLOR (读入彩">
+<meta property="og:type" content="article">
+<meta property="og:title" content="opencv">
+<meta property="og:url" content="https://peterouob.github.io/2023/01/07/opencv/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="讀取圖片，並獲得圖片屬性及融合RGB123456789101112131415161718192021import cv2import numpy as npimg &#x3D; cv2.imread(文件名,[,参数])参数(1) cv2.IMREAD_UNCHANGED (图像不可变)参数(2) cv2.IMREAD_GRAYSCALE (灰度图像)参数(3) cv2.IMREAD_COLOR (读入彩">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-12-25T00:11:12.000Z">
-<meta property="article:modified_time" content="2022-12-30T13:21:38.432Z">
+<meta property="og:image" content="https://peterouob.github.io/images/img13.png">
+<meta property="article:published_time" content="2023-01-07T04:01:03.000Z">
+<meta property="article:modified_time" content="2023-01-07T04:23:14.160Z">
 <meta property="article:author" content="Peter Lin">
-<meta property="article:tag" content="CNN">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://peterouob.github.io/images/img13.png">
   
   
   
-  <title>從阿拉伯數字辨識能力了解CNN - Hexo</title>
+  <title>opencv - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -195,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="從阿拉伯數字辨識能力了解CNN"></span>
+            <span id="subtitle" data-typed-text="opencv"></span>
           
         </div>
 
@@ -206,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-25 08:11" pubdate>
-          December 25, 2022 am
+        <time datetime="2023-01-07 12:01" pubdate>
+          January 7, 2023 pm
         </time>
       </span>
     
@@ -218,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 words
+          1k words
         
       </span>
     
@@ -229,7 +232,7 @@
         
         
         
-          1 mins
+          9 mins
         
       </span>
     
@@ -267,12 +270,17 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">從阿拉伯數字辨識能力了解CNN</h1>
+            <h1 style="display: none">opencv</h1>
             
             
               <div class="markdown-body">
                 
-                
+                <h3 id="讀取圖片，並獲得圖片屬性及融合RGB"><a href="#讀取圖片，並獲得圖片屬性及融合RGB" class="headerlink" title="讀取圖片，並獲得圖片屬性及融合RGB"></a>讀取圖片，並獲得圖片屬性及融合RGB</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>img = cv2.imread(文件名,[,参数])<br>参数(<span class="hljs-number">1</span>) cv2.IMREAD_UNCHANGED (图像不可变)<br>参数(<span class="hljs-number">2</span>) cv2.IMREAD_GRAYSCALE (灰度图像)<br>参数(<span class="hljs-number">3</span>) cv2.IMREAD_COLOR (读入彩色图像)<br>参数(<span class="hljs-number">4</span>) cv2.COLOR_BGR2RGB (图像通道BGR转成RGB)<br><br><span class="hljs-comment"># 读取图片</span><br>img = cv2.imread(<span class="hljs-string">&quot;test.png&quot;</span>, cv2.IMREAD_UNCHANGED) <span class="hljs-comment">#使用IMREAD_UNCHANGED會變四維度-&gt;不透明度</span><br>b,g,r = cv2.split(img)[<span class="hljs-number">0</span>],cv2.split(img)[<span class="hljs-number">1</span>],cv2.split(img)[<span class="hljs-number">2</span>]<br><span class="hljs-comment">#0-&gt;b , 1-&gt;h 2-&gt;r</span><br>m = cv2.merge([b,g,r]) <span class="hljs-comment">#融合rgb，opencv預設為bgr</span><br>cv2.imshow(<span class="hljs-string">&#x27;Data&#x27;</span>,m)<br><br><span class="hljs-comment"># 等待显示</span><br>cv2.waitKey(<span class="hljs-number">0</span>)<br>cv2.destroyAllWindows()<br>cv2.imwrite(<span class="hljs-string">&#x27;名稱.png&#x27;</span>,img)<br><span class="hljs-built_in">print</span>(img.shape)=&gt;大小,大小,維度<br></code></pre></td></tr></table></figure>
+
+<h3 id="均值率波"><a href="#均值率波" class="headerlink" title="均值率波"></a>均值率波</h3><ul>
+<li>任何一點的像素質都是周圍區域的像素相加除以區域個數。核大小代表矩陣的大小<br><img src="/../images/img13.png" srcset="/img/loading.gif" lazyload><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><br><span class="hljs-keyword">import</span> cv2<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><br>img = cv2.imread(<span class="hljs-string">&#x27;test01.png&#x27;</span>)<br><span class="hljs-comment">#將圖片變為全彩</span><br>source = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)<br><br><span class="hljs-comment">#濾波-&gt;核大小為7*7</span><br>result = cv2.blur(source,(<span class="hljs-number">7</span>,<span class="hljs-number">7</span>))<br><span class="hljs-comment">#顯示</span><br>titles = [<span class="hljs-string">&#x27;Source Image&#x27;</span>, <span class="hljs-string">&#x27;Blur Image&#x27;</span>]<br>images = [source, result]<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>):<br>   plt.subplot(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,i+<span class="hljs-number">1</span>), plt.imshow(images[i], <span class="hljs-string">&#x27;gray&#x27;</span>)<br>   plt.title(titles[i])<br>   plt.xticks([]),plt.yticks([])<br>plt.show()<br><br></code></pre></td></tr></table></figure></li>
+</ul>
+
                 
               </div>
             
@@ -280,13 +288,6 @@
             <div>
               <div class="post-metas my-3">
   
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/CNN/">#CNN</a>
-      
-    </div>
   
 </div>
 
@@ -296,8 +297,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>從阿拉伯數字辨識能力了解CNN</div>
-      <div>https://peterouob.github.io/2022/12/25/從阿拉伯數字辨識能力了解CNN/</div>
+      <div>opencv</div>
+      <div>https://peterouob.github.io/2023/01/07/opencv/</div>
     </div>
     <div class="license-meta">
       
@@ -309,7 +310,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>December 25, 2022</div>
+          <div>January 7, 2023</div>
         </div>
       
       
@@ -341,18 +342,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/12/30/%E5%8D%B7%E7%A9%8D%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF/" title="卷積神經網路">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">卷積神經網路</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/24/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E6%96%B0%E6%89%8B%E6%9D%91/" title="機器學習新手村">
-                        <span class="hidden-mobile">機器學習新手村</span>
+                      <a href="/2022/12/30/golang%E4%BD%B5%E7%99%BC/" title="golang併發">
+                        <span class="hidden-mobile">golang併發</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

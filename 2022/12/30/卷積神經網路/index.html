@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://peterouob.github.io/images/img11.jpeg">
 <meta property="og:image" content="https://peterouob.github.io/images/img12.jpeg">
 <meta property="article:published_time" content="2022-12-30T06:14:52.000Z">
-<meta property="article:modified_time" content="2023-01-06T11:34:36.239Z">
+<meta property="article:modified_time" content="2023-01-06T11:46:02.855Z">
 <meta property="article:author" content="Peter Lin">
 <meta property="article:tag" content="CNN">
 <meta name="twitter:card" content="summary_large_image">
@@ -244,7 +244,7 @@
         
         
         
-          19 mins
+          20 mins
         
       </span>
     
@@ -320,13 +320,16 @@
 <h1 id="傳統圖像特徵問題"><a href="#傳統圖像特徵問題" class="headerlink" title="傳統圖像特徵問題"></a>傳統圖像特徵問題</h1><ul>
 <li>雖然能capture局部的不變性，但是因為人工設計，無法更好條街自身參數，優化自身任務，不好方便進行併發運算</li>
 </ul>
+<h3 id="CNN為什麼通過局部連接減少參數後，效果依然很好"><a href="#CNN為什麼通過局部連接減少參數後，效果依然很好" class="headerlink" title="CNN為什麼通過局部連接減少參數後，效果依然很好"></a>CNN為什麼通過局部連接減少參數後，效果依然很好</h3><ul>
+<li>更好保留圖像局部的不變性，減少參數影響過擬何</li>
+</ul>
 <h1 id="卷積神經網路三大結構特性"><a href="#卷積神經網路三大結構特性" class="headerlink" title="卷積神經網路三大結構特性"></a>卷積神經網路三大結構特性</h1><ol>
 <li>局部感受野(Locally Recptive Area)</li>
 <li>權值共享(Shared Weights)</li>
 <li>下採樣(Spatial or Temporal Sub-sampling)&#x3D;&gt;pooling層，減少維度<br>-&gt; 對平移，縮放，扭曲的不變性<br><img src="/../images/img3.png" srcset="/img/loading.gif" lazyload><br>深度不可太大-&gt;梯度消失</li>
 </ol>
 <h1 id="卷積神經網路構建"><a href="#卷積神經網路構建" class="headerlink" title="卷積神經網路構建"></a>卷積神經網路構建</h1><ol>
-<li>卷積層(Convolutional Layer)<ol>
+<li>卷積層(Convolutional Layer)-&gt;1*1卷積層，保留原本尺度，在深度上變化維度<ol>
 <li>卷積神經網路基本結構<ul>
 <li>可以優先定義好Kernal的size，開始作前項傳播和反向傳播</li>
 </ul>
@@ -347,7 +350,7 @@
 </li>
 <li>卷積核組合方式：卷積層(Conv layer)-特徵圖(feature map)<br><img src="/../images/img7.png" srcset="/img/loading.gif" lazyload><br>m和input data的深度(depth)有關，n卷積和數目匹配和後面輸出匹配，3*3造成邊消失。一般來說n都會比m大&#x3D;&gt;得到更多空間維度小，但更高維的表達。</li>
 <li>卷積核關鍵參數<ul>
-<li>卷積核大小<ol>
+<li>卷積核大小(學習參數)<ol>
 <li>奇偶選擇：一般奇數，滿足對稱性。if偶，無法滿足中心對稱，在離散上產生過多問題</li>
 <li>大小選擇：根據輸入數據，根據圖像特徵</li>
 <li>厚度確定：與輸入數據一致</li>
@@ -496,8 +499,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/25/%E5%BE%9E%E9%98%BF%E6%8B%89%E4%BC%AF%E6%95%B8%E5%AD%97%E8%BE%A8%E8%AD%98%E8%83%BD%E5%8A%9B%E4%BA%86%E8%A7%A3CNN/" title="從阿拉伯數字辨識能力了解CNN">
-                        <span class="hidden-mobile">從阿拉伯數字辨識能力了解CNN</span>
+                      <a href="/2022/12/24/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E6%96%B0%E6%89%8B%E6%9D%91/" title="機器學習新手村">
+                        <span class="hidden-mobile">機器學習新手村</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
