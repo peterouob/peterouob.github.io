@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>李宏毅CNN</title>
+    <link href="/2023/01/08/%E6%9D%8E%E5%AE%8F%E6%AF%85CNN/"/>
+    <url>/2023/01/08/%E6%9D%8E%E5%AE%8F%E6%AF%85CNN/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Image-Claaification"><a href="#Image-Claaification" class="headerlink" title="Image Claaification"></a>Image Claaification</h3><ul><li>給機器圖片，讓他分類<ol><li>假設模型輸入圖片大小固定(都先假設(rescale)大小不會不同)</li><li>分類向類的長度就是分辨多少種不同的東西</li></ol></li><li>如何讓影像給模型的輸入<ol><li>一張圖片其實是3-D tensor(tensor為超過2維矩陣)<ul><li>一維是長，一維是寬，一維是channel(代表顏色</li></ul></li><li>將3維channel拉直變相量就能當network輸入，向量裏面的值皆為某一位置的顏色強度值</li></ol></li><li>Fully Connected Network<ol><li>問題：模型彈性導致過擬和</li></ol></li><li>Observation 1<ol><li>考慮影像本身的特性，我們其實不需要每一個Neuron跟input的每一個dimension都有一個Weight</li><li>神經模型進行影像分辨主要找有沒有重要的patterns代表某種物件</li><li>因此不需要輸入整張圖片，也許給他看一小部分就好</li></ol></li><li>Simplification 1<ol><li>在CNN裏面，會設定一個區域叫Receptive field，每一個Neuron都只需要關心自己的Receptive field就好</li><li>Receptive field將裏面的大小拉成直的向量+bias當作這級輸出，下級輸入</li><li>Receptive field為自己定義(因此對問題而改變)，彼此間也能重疊，大小可不一，可考慮只取一channel</li></ol></li><li>Simplification 1 -Typical Setting(經典設計Receptive field)<ol><li>會看所有channel(深度)</li><li>描述Receptive field只看寬和長-&gt;Kernel size(3*3)</li><li>畫一個Receptive field通常會有64,128個neurons守備他的範圍</li><li>將Receptive field移動形成新的Receptive，移動的步數為stride-&gt;希望Receptive field彼此之間有重疊</li><li>移動超出那就做padding-&gt;補值<br><code>20:28 </code></li></ol></li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>opencv</title>
     <link href="/2023/01/07/opencv/"/>
     <url>/2023/01/07/opencv/</url>

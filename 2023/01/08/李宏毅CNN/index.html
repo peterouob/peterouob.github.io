@@ -16,23 +16,21 @@
   <meta name="author" content="Peter Lin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="讀取圖片，並獲得圖片屬性及融合RGB123456789101112131415161718192021import cv2import numpy as npimg &#x3D; cv2.imread(文件名,[,参数])参数(1) cv2.IMREAD_UNCHANGED (图像不可变)参数(2) cv2.IMREAD_GRAYSCALE (灰度图像)参数(3) cv2.IMREAD_COLOR (读入彩">
+    <meta name="description" content="Image Claaification 給機器圖片，讓他分類 假設模型輸入圖片大小固定(都先假設(rescale)大小不會不同) 分類向類的長度就是分辨多少種不同的東西   如何讓影像給模型的輸入 一張圖片其實是3-D tensor(tensor為超過2維矩陣) 一維是長，一維是寬，一維是channel(代表顏色   將3維channel拉直變相量就能當network輸入，向量裏面的值皆為某一位置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="opencv">
-<meta property="og:url" content="https://peterouob.github.io/2023/01/07/opencv/index.html">
+<meta property="og:title" content="李宏毅CNN">
+<meta property="og:url" content="https://peterouob.github.io/2023/01/08/%E6%9D%8E%E5%AE%8F%E6%AF%85CNN/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="讀取圖片，並獲得圖片屬性及融合RGB123456789101112131415161718192021import cv2import numpy as npimg &#x3D; cv2.imread(文件名,[,参数])参数(1) cv2.IMREAD_UNCHANGED (图像不可变)参数(2) cv2.IMREAD_GRAYSCALE (灰度图像)参数(3) cv2.IMREAD_COLOR (读入彩">
+<meta property="og:description" content="Image Claaification 給機器圖片，讓他分類 假設模型輸入圖片大小固定(都先假設(rescale)大小不會不同) 分類向類的長度就是分辨多少種不同的東西   如何讓影像給模型的輸入 一張圖片其實是3-D tensor(tensor為超過2維矩陣) 一維是長，一維是寬，一維是channel(代表顏色   將3維channel拉直變相量就能當network輸入，向量裏面的值皆為某一位置">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://peterouob.github.io/images/img13.png">
-<meta property="article:published_time" content="2023-01-07T04:01:03.000Z">
-<meta property="article:modified_time" content="2023-01-07T04:23:14.160Z">
+<meta property="article:published_time" content="2023-01-08T04:45:31.000Z">
+<meta property="article:modified_time" content="2023-01-08T05:12:47.357Z">
 <meta property="article:author" content="Peter Lin">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://peterouob.github.io/images/img13.png">
   
   
   
-  <title>opencv - Hexo</title>
+  <title>李宏毅CNN - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="opencv"></span>
+            <span id="subtitle" data-typed-text="李宏毅CNN"></span>
           
         </div>
 
@@ -209,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-01-07 12:01" pubdate>
-          January 7, 2023 pm
+        <time datetime="2023-01-08 12:45" pubdate>
+          January 8, 2023 pm
         </time>
       </span>
     
@@ -221,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k words
+          771 words
         
       </span>
     
@@ -232,7 +230,7 @@
         
         
         
-          9 mins
+          7 mins
         
       </span>
     
@@ -270,15 +268,49 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">opencv</h1>
+            <h1 style="display: none">李宏毅CNN</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="讀取圖片，並獲得圖片屬性及融合RGB"><a href="#讀取圖片，並獲得圖片屬性及融合RGB" class="headerlink" title="讀取圖片，並獲得圖片屬性及融合RGB"></a>讀取圖片，並獲得圖片屬性及融合RGB</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><br>img = cv2.imread(文件名,[,参数])<br>参数(<span class="hljs-number">1</span>) cv2.IMREAD_UNCHANGED (图像不可变)<br>参数(<span class="hljs-number">2</span>) cv2.IMREAD_GRAYSCALE (灰度图像)<br>参数(<span class="hljs-number">3</span>) cv2.IMREAD_COLOR (读入彩色图像)<br>参数(<span class="hljs-number">4</span>) cv2.COLOR_BGR2RGB (图像通道BGR转成RGB)<br><br><span class="hljs-comment"># 读取图片</span><br>img = cv2.imread(<span class="hljs-string">&quot;test.png&quot;</span>, cv2.IMREAD_UNCHANGED) <span class="hljs-comment">#使用IMREAD_UNCHANGED會變四維度-&gt;不透明度</span><br>b,g,r = cv2.split(img)[<span class="hljs-number">0</span>],cv2.split(img)[<span class="hljs-number">1</span>],cv2.split(img)[<span class="hljs-number">2</span>]<br><span class="hljs-comment">#0-&gt;b , 1-&gt;h 2-&gt;r</span><br>m = cv2.merge([b,g,r]) <span class="hljs-comment">#融合rgb，opencv預設為bgr</span><br>cv2.imshow(<span class="hljs-string">&#x27;Data&#x27;</span>,m)<br><br><span class="hljs-comment"># 等待显示</span><br>cv2.waitKey(<span class="hljs-number">0</span>)<br>cv2.destroyAllWindows()<br>cv2.imwrite(<span class="hljs-string">&#x27;名稱.png&#x27;</span>,img)<br><span class="hljs-built_in">print</span>(img.shape)=&gt;大小,大小,維度<br></code></pre></td></tr></table></figure>
-
-<h3 id="均值率波"><a href="#均值率波" class="headerlink" title="均值率波"></a>均值率波</h3><ul>
-<li>任何一點的像素質都是周圍區域的像素相加除以區域個數。核大小代表矩陣的大小<br><img src="/../images/img13.png" srcset="/img/loading.gif" lazyload><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><br><span class="hljs-keyword">import</span> cv2<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><br>img = cv2.imread(<span class="hljs-string">&#x27;test01.png&#x27;</span>)<br><span class="hljs-comment">#將圖片變為全彩</span><br>source = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)<br><br><span class="hljs-comment">#濾波-&gt;核大小為7*7</span><br>result = cv2.blur(source,(<span class="hljs-number">7</span>,<span class="hljs-number">7</span>))<br><span class="hljs-comment">#顯示</span><br>titles = [<span class="hljs-string">&#x27;Source Image&#x27;</span>, <span class="hljs-string">&#x27;Blur Image&#x27;</span>]<br>images = [source, result]<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>):<br>   plt.subplot(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,i+<span class="hljs-number">1</span>), plt.imshow(images[i], <span class="hljs-string">&#x27;gray&#x27;</span>)<br>   plt.title(titles[i])<br>   plt.xticks([]),plt.yticks([])<br>plt.show()<br><br></code></pre></td></tr></table></figure></li>
+                <h3 id="Image-Claaification"><a href="#Image-Claaification" class="headerlink" title="Image Claaification"></a>Image Claaification</h3><ul>
+<li>給機器圖片，讓他分類<ol>
+<li>假設模型輸入圖片大小固定(都先假設(rescale)大小不會不同)</li>
+<li>分類向類的長度就是分辨多少種不同的東西</li>
+</ol>
+</li>
+<li>如何讓影像給模型的輸入<ol>
+<li>一張圖片其實是3-D tensor(tensor為超過2維矩陣)<ul>
+<li>一維是長，一維是寬，一維是channel(代表顏色</li>
+</ul>
+</li>
+<li>將3維channel拉直變相量就能當network輸入，向量裏面的值皆為某一位置的顏色強度值</li>
+</ol>
+</li>
+<li>Fully Connected Network<ol>
+<li>問題：模型彈性導致過擬和</li>
+</ol>
+</li>
+<li>Observation 1<ol>
+<li>考慮影像本身的特性，我們其實不需要每一個Neuron跟input的每一個dimension都有一個Weight</li>
+<li>神經模型進行影像分辨主要找有沒有重要的patterns代表某種物件</li>
+<li>因此不需要輸入整張圖片，也許給他看一小部分就好</li>
+</ol>
+</li>
+<li>Simplification 1<ol>
+<li>在CNN裏面，會設定一個區域叫Receptive field，每一個Neuron都只需要關心自己的Receptive field就好</li>
+<li>Receptive field將裏面的大小拉成直的向量+bias當作這級輸出，下級輸入</li>
+<li>Receptive field為自己定義(因此對問題而改變)，彼此間也能重疊，大小可不一，可考慮只取一channel</li>
+</ol>
+</li>
+<li>Simplification 1 -Typical Setting(經典設計Receptive field)<ol>
+<li>會看所有channel(深度)</li>
+<li>描述Receptive field只看寬和長-&gt;Kernel size(3*3)</li>
+<li>畫一個Receptive field通常會有64,128個neurons守備他的範圍</li>
+<li>將Receptive field移動形成新的Receptive，移動的步數為stride-&gt;希望Receptive field彼此之間有重疊</li>
+<li>移動超出那就做padding-&gt;補值<br><code>20:28 </code></li>
+</ol>
+</li>
 </ul>
 
                 
@@ -297,8 +329,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>opencv</div>
-      <div>https://peterouob.github.io/2023/01/07/opencv/</div>
+      <div>李宏毅CNN</div>
+      <div>https://peterouob.github.io/2023/01/08/李宏毅CNN/</div>
     </div>
     <div class="license-meta">
       
@@ -310,7 +342,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>January 7, 2023</div>
+          <div>January 8, 2023</div>
         </div>
       
       
@@ -342,18 +374,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/01/08/%E6%9D%8E%E5%AE%8F%E6%AF%85CNN/" title="李宏毅CNN">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">李宏毅CNN</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/30/golang%E4%BD%B5%E7%99%BC/" title="golang併發">
-                        <span class="hidden-mobile">golang併發</span>
+                      <a href="/2023/01/07/opencv/" title="opencv">
+                        <span class="hidden-mobile">opencv</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
