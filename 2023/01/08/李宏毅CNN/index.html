@@ -23,10 +23,13 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Image Claaification 給機器圖片，讓他分類 假設模型輸入圖片大小固定(都先假設(rescale)大小不會不同) 分類向類的長度就是分辨多少種不同的東西   如何讓影像給模型的輸入 一張圖片其實是3-D tensor(tensor為超過2維矩陣) 一維是長，一維是寬，一維是channel(代表顏色   將3維channel拉直變相量就能當network輸入，向量裏面的值皆為某一位置">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://peterouob.github.io/images/img14.jpeg">
+<meta property="og:image" content="https://peterouob.github.io/images/img15.jpeg">
 <meta property="article:published_time" content="2023-01-08T04:45:31.000Z">
-<meta property="article:modified_time" content="2023-01-08T05:12:47.357Z">
+<meta property="article:modified_time" content="2023-01-09T11:23:46.010Z">
 <meta property="article:author" content="Peter Lin">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://peterouob.github.io/images/img14.jpeg">
   
   
   
@@ -219,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          771 words
+          1.1k words
         
       </span>
     
@@ -230,7 +233,7 @@
         
         
         
-          7 mins
+          9 mins
         
       </span>
     
@@ -311,6 +314,20 @@
 <li>移動超出那就做padding-&gt;補值<br><code>20:28 </code></li>
 </ol>
 </li>
+<li>Observation 2<ol>
+<li>the same patterns appear in different regions-&gt;都在receptive field範圍，有偵測鳥嘴neurons</li>
+<li>每一個守備範圍都要有偵測鳥嘴的neurons導致參數過多</li>
+</ol>
+</li>
+<li>Simplification 2<ol>
+<li>讓不同Receptive field的neurons做parameter sharing-&gt;不同neurons的weight相同，因為照顧範圍(輸入不同)，輸出也不一樣<br><img src="/../images/img14.jpeg" srcset="/img/loading.gif" lazyload></li>
+</ol>
+</li>
+<li>Simplification 2-Typical Setting<ol>
+<li>每組Receptive field都只有一組參數-&gt;filter</li>
+</ol>
+</li>
+<li>Benefit of Convolutional Layer<br><img src="/../images/img15.jpeg" srcset="/img/loading.gif" lazyload></li>
 </ul>
 
                 
