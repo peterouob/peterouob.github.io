@@ -4,11 +4,37 @@
   
     
     <entry>
+      <title>cs231n</title>
+      <link href="/2023/01/15/cs231n/"/>
+      <url>/2023/01/15/cs231n/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>node之旅</title>
+      <link href="/2023/01/15/node%E4%B9%8B%E6%97%85/"/>
+      <url>/2023/01/15/node%E4%B9%8B%E6%97%85/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>李宏毅CNN</title>
       <link href="/2023/01/08/%E6%9D%8E%E5%AE%8F%E6%AF%85CNN/"/>
       <url>/2023/01/08/%E6%9D%8E%E5%AE%8F%E6%AF%85CNN/</url>
       
-        <content type="html"><![CDATA[<h3 id="Image-Claaification"><a href="#Image-Claaification" class="headerlink" title="Image Claaification"></a>Image Claaification</h3><ul><li>給機器圖片，讓他分類<ol><li>假設模型輸入圖片大小固定(都先假設(rescale)大小不會不同)</li><li>分類向類的長度就是分辨多少種不同的東西</li></ol></li><li>如何讓影像給模型的輸入<ol><li>一張圖片其實是3-D tensor(tensor為超過2維矩陣)<ul><li>一維是長，一維是寬，一維是channel(代表顏色</li></ul></li><li>將3維channel拉直變相量就能當network輸入，向量裏面的值皆為某一位置的顏色強度值</li></ol></li><li>Fully Connected Network<ol><li>問題：模型彈性導致過擬和</li></ol></li><li>Observation 1<ol><li>考慮影像本身的特性，我們其實不需要每一個Neuron跟input的每一個dimension都有一個Weight</li><li>神經模型進行影像分辨主要找有沒有重要的patterns代表某種物件</li><li>因此不需要輸入整張圖片，也許給他看一小部分就好</li></ol></li><li>Simplification 1<ol><li>在CNN裏面，會設定一個區域叫Receptive field，每一個Neuron都只需要關心自己的Receptive field就好</li><li>Receptive field將裏面的大小拉成直的向量+bias當作這級輸出，下級輸入</li><li>Receptive field為自己定義(因此對問題而改變)，彼此間也能重疊，大小可不一，可考慮只取一channel</li></ol></li><li>Simplification 1 -Typical Setting(經典設計Receptive field)<ol><li>會看所有channel(深度)</li><li>描述Receptive field只看寬和長-&gt;Kernel size(3*3)</li><li>畫一個Receptive field通常會有64,128個neurons守備他的範圍</li><li>將Receptive field移動形成新的Receptive，移動的步數為stride-&gt;希望Receptive field彼此之間有重疊</li><li>移動超出那就做padding-&gt;補值<br><code>20:28 </code></li></ol></li><li>Observation 2<ol><li>the same patterns appear in different regions-&gt;都在receptive field範圍，有偵測鳥嘴neurons</li><li>每一個守備範圍都要有偵測鳥嘴的neurons導致參數過多</li></ol></li><li>Simplification 2<ol><li>讓不同Receptive field的neurons做parameter sharing-&gt;不同neurons的weight相同，因為照顧範圍(輸入不同)，輸出也不一樣<br><img src="/../images/img14.jpeg"></li></ol></li><li>Simplification 2-Typical Setting<ol><li>每組Receptive field都只有一組參數-&gt;filter</li></ol></li><li>Benefit of Convolutional Layer<br><img src="/../images/img15.jpeg"></li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="Image-Claaification"><a href="#Image-Claaification" class="headerlink" title="Image Claaification"></a>Image Claaification</h3><ul><li>給機器圖片，讓他分類<ol><li>假設模型輸入圖片大小固定(都先假設(rescale)大小不會不同)</li><li>分類向類的長度就是分辨多少種不同的東西</li></ol></li><li>如何讓影像給模型的輸入<ol><li>一張圖片其實是3-D tensor(tensor為超過2維矩陣)<ul><li>一維是長，一維是寬，一維是channel(代表顏色</li></ul></li><li>將3維channel拉直變相量就能當network輸入，向量裏面的值皆為某一位置的顏色強度值</li></ol></li><li>Fully Connected Network<ol><li>問題：模型彈性導致過擬和</li></ol></li><li>Observation 1<ol><li>考慮影像本身的特性，我們其實不需要每一個Neuron跟input的每一個dimension都有一個Weight</li><li>神經模型進行影像分辨主要找有沒有重要的patterns代表某種物件</li><li>因此不需要輸入整張圖片，也許給他看一小部分就好</li></ol></li><li>Simplification 1<ol><li>在CNN裏面，會設定一個區域叫Receptive field，每一個Neuron都只需要關心自己的Receptive field就好</li><li>Receptive field將裏面的大小拉成直的向量+bias當作這級輸出，下級輸入</li><li>Receptive field為自己定義(因此對問題而改變)，彼此間也能重疊，大小可不一，可考慮只取一channel</li></ol></li><li>Simplification 1 -Typical Setting(經典設計Receptive field)<ol><li>會看所有channel(深度)</li><li>描述Receptive field只看寬和長-&gt;Kernel size(3*3)</li><li>畫一個Receptive field通常會有64,128個neurons守備他的範圍</li><li>將Receptive field移動形成新的Receptive，移動的步數為stride-&gt;希望Receptive field彼此之間有重疊</li><li>移動超出那就做padding-&gt;補值<br><code>20:28 </code></li></ol></li><li>Observation 2<ol><li>the same patterns appear in different regions-&gt;都在receptive field範圍，有偵測鳥嘴neurons</li><li>每一個守備範圍都要有偵測鳥嘴的neurons導致參數過多</li></ol></li><li>Simplification 2<ol><li>讓不同Receptive field的neurons做parameter sharing-&gt;不同neurons的weight相同，因為照顧範圍(輸入不同)，輸出也不一樣<br><img src="/../images/img14.jpeg"></li></ol></li><li>Simplification 2-Typical Setting<ol><li>每組Receptive field都只有一組參數-&gt;filter</li></ol></li><li>Benefit of Convolutional Layer<br><img src="/../images/img15.jpeg"></li></ul><h3 id="CNN第二種解釋方式"><a href="#CNN第二種解釋方式" class="headerlink" title="CNN第二種解釋方式"></a>CNN第二種解釋方式</h3><ul><li>Convolutional Layer?<ol><li>Convolutional Layer就是由很多個Filter組成，Filter為tensor，tensor的數值其實就是model裏面的parameter(未知)</li><li>Filter的大小為3<em>3</em>channel</li><li>channel&#x3D;3(RGB),channel&#x3D;1(black and white)</li><li>每一個Filter作用就是抓patten</li><li>假設Filter內數值已知，將Filter放在圖片左上角，讓其中9個值相乘(Inner Product)</li><li>獲得新的值後將Filter往右移，這邊也等同於stride&#x3D;1，再繼續做Inner Product</li></ol></li><li>Filter究竟如何偵測Patten?<ol><li>定義Filter為<img src="/../images/Filter.png"></li><li>假設圖片<img src="/../images/img16.png"></li><li>當進行上述相乘得出結果<img src="/../images/img17.png"></li><li>觀察結果可知，當圖片中也存在和Filter一樣對角線全為1線時，得出的值最大</li><li>而最大的輸出值變為在Filter希望出現的patten</li><li>假設我們有64個Filter，當全部跑完後得出64群數字，而這些數字就是Feature map</li><li>Feature map可以想成一張全新圖片，不過channel所代表的是Filter的數量</li><li>再疊上去的Filter的深度必須為上一層image的channel-&gt;此為64<br><img src="/../images/img18.png"></li></ol></li><li>如果我們的Filter設定都是3*3，會不會讓我們的network沒辦法看大範圍patten<ol><li>不會，當你今天Network疊的越深，同樣為3*3大小的Filter看得範圍會越大</li></ol></li></ul><h3 id="Comparison-of-two-stories"><a href="#Comparison-of-two-stories" class="headerlink" title="Comparison of two stories"></a>Comparison of two stories</h3>]]></content>
       
       
       
