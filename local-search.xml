@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>2023</title>
+    <link href="/2023/01/24/2023/"/>
+    <url>/2023/01/24/2023/</url>
+    
+    <content type="html"><![CDATA[<table><thead><tr><th align="center"><strong>目標名稱</strong></th><th align="center">如何實作</th><th align="center">影片</th><th align="center">別人的中文筆記</th></tr></thead><tbody><tr><td align="center"><strong>看完MIT的離散數學</strong></td><td align="center">將筆記寫在筆記本上</td><td align="center"><a href="https://www/.bilibili/.com/video/BV1PM411h7qx?vd%5C_source=68d598f071e67b6eb6397842c2533c9c">https://www\.bilibili\.com/video/BV1PM411h7qx?vd\_source=68d598f071e67b6eb6397842c2533c9c</a></td><td align="center"></td></tr><tr><td align="center"><strong>看完MIT的概率論</strong></td><td align="center">將筆記寫在筆記本上</td><td align="center"><a href="https://www/.bilibili/.com/video/BV1vX4y1w7uZ?vd%5C_source=68d598f071e67b6eb6397842c2533c9c">https://www\.bilibili\.com/video/BV1vX4y1w7uZ?vd\_source=68d598f071e67b6eb6397842c2533c9c</a></td><td align="center"></td></tr><tr><td align="center"><strong>看完MIT的算法導論</strong></td><td align="center">整理筆記放到自己的blog或筆記本</td><td align="center"><a href="https://www/.bilibili/.com/video/BV1M3411C7j2?vd%5C_source=68d598f071e67b6eb6397842c2533c9c">https://www\.bilibili\.com/video/BV1M3411C7j2?vd\_source=68d598f071e67b6eb6397842c2533c9c</a></td><td align="center"></td></tr><tr><td align="center"><strong>看完MIT的線性代數</strong></td><td align="center">將筆記寫在筆記本上</td><td align="center"><a href="https://www/.bilibili/.com/video/BV16Z4y1U7oU?vd%5C_source=68d598f071e67b6eb6397842c2533c9c">https://www\.bilibili\.com/video/BV16Z4y1U7oU?vd\_source=68d598f071e67b6eb6397842c2533c9c</a></td><td align="center"></td></tr><tr><td align="center"><strong>看完CS231n</strong></td><td align="center">整理筆記放到自己的blog</td><td align="center"><a href="https://www/.bilibili/.com/video/BV1TJ411d7b7?vd%5C_source=68d598f071e67b6eb6397842c2533c9c">https://www\.bilibili\.com/video/BV1TJ411d7b7?vd\_source=68d598f071e67b6eb6397842c2533c9c</a></td><td align="center"><a href="https://zhuanlan/.zhihu/.com/p/21930884">https://zhuanlan\.zhihu\.com/p/21930884</a></td></tr><tr><td align="center"><strong>了解RNN&amp;LSTM</strong></td><td align="center">整理筆記放到自己的blog</td><td align="center"><a href="https://www/.bilibili/.com/video/BV16D4y1k7ka?vd%5C_source=68d598f071e67b6eb6397842c2533c9c">https://www\.bilibili\.com/video/BV16D4y1k7ka?vd\_source=68d598f071e67b6eb6397842c2533c9c</a></td><td align="center"></td></tr><tr><td align="center"><strong>實做完大型GO語言項目</strong></td><td align="center">項目推到github，筆記放blog</td><td align="center">目前是IM後續打算先電商平台</td><td align="center"></td></tr><tr><td align="center"><strong>了解docker和k8s的愛恨情仇</strong></td><td align="center">整理筆記放到自己的blog上</td><td align="center">k8s-<a href="https://www/.bilibili/.com/video/BV1jM411h7MU?vd%5C_source=68d598f071e67b6eb6397842c2533c9c">https://www\.bilibili\.com/video/BV1jM411h7MU?vd\_source=68d598f071e67b6eb6397842c2533c9c</a></td><td align="center"></td></tr><tr><td align="center"><strong>了解計算機底層原理</strong></td><td align="center">將筆記寫在筆記本上</td><td align="center"><a href="https://www/.bilibili/.com/video/BV1U3411S7BA?vd%5C_source=68d598f071e67b6eb6397842c2533c9c">https://www\.bilibili\.com/video/BV1U3411S7BA?vd\_source=68d598f071e67b6eb6397842c2533c9c</a></td><td align="center"></td></tr></tbody></table>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>2023</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>cs231n</title>
     <link href="/2023/01/15/cs231n/"/>
     <url>/2023/01/15/cs231n/</url>
