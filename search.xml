@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>深入頗析k8s</title>
+      <link href="/2023/01/24/%E6%B7%B1%E5%85%A5%E9%A0%97%E6%9E%90k8s/"/>
+      <url>/2023/01/24/%E6%B7%B1%E5%85%A5%E9%A0%97%E6%9E%90k8s/</url>
+      
+        <content type="html"><![CDATA[<p><code>預先在本機端安裝好ubuntu</code><br><a href="https://zhuanlan.zhihu.com/p/59548929">https://zhuanlan.zhihu.com/p/59548929</a></p><h2 id="Part1-Kubernetes基礎"><a href="#Part1-Kubernetes基礎" class="headerlink" title="Part1. Kubernetes基礎"></a>Part1. Kubernetes基礎</h2><h3 id="容器技術基礎"><a href="#容器技術基礎" class="headerlink" title="容器技術基礎"></a>容器技術基礎</h3>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2023</title>
       <link href="/2023/01/24/2023/"/>
       <url>/2023/01/24/2023/</url>
