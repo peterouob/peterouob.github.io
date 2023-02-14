@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>vue+ts+element-plus</title>
+      <link href="/2023/02/14/vue-ts-element-plus/"/>
+      <url>/2023/02/14/vue-ts-element-plus/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-創建項目"><a href="#1-創建項目" class="headerlink" title="1.創建項目"></a>1.創建項目</h2><ul><li>創建資料夾後開啟編譯器的終端</li></ul><ol><li>vue create [項目名稱]</li><li>選擇需要套件 babel,vuex,router,typescript</li><li>y到底</li><li>cd 項目後 npm run serve</li></ol><ul><li>創建基本項目</li></ul><p><em>如果遇到可讀狀態 sudo chown -R [使用者名稱] [項目名稱]</em></p><ol><li>將assest中logo刪除</li><li>將componets中項目刪除</li><li>將views中項目刪除並新增index.vue</li></ol><ul><li>views&#x2F;index.vue項目初始化<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;div class=&quot;index&quot;&gt;首頁&lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;script&gt;<br>export default &#123;<br>  name: &quot;index&quot;,<br>  components:&#123;<br><br>  &#125;,<br>&#125;<br>&lt;/script&gt;<br><br>&lt;style scoped&gt;<br><br>&lt;/style&gt;<br><br></code></pre></td></tr></table></figure></li></ul><ol start="4"><li>配置路由</li></ol><ul><li>router&#x2F;index.ts<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs vue">import &#123; createRouter, createWebHistory, RouteRecordRaw &#125; from &#x27;vue-router&#x27;<br><br>const routes: Array&lt;RouteRecordRaw&gt; = [<br>  &#123;<br>    path: &#x27;/&#x27;, //指定為根目錄<br>    name: &#x27;index&#x27;,<br>    component: ()=&gt;import(&#x27;../views/index.vue&#x27;) //依照個人定義修改<br>  &#125;,<br>]<br><br>const router = createRouter(&#123;<br>  history: createWebHistory(process.env.BASE_URL),<br>  routes<br>&#125;)<br><br>export default router<br><br></code></pre></td></tr></table></figure></li></ul><ol start="5"><li>修改主入口app.vue<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;div id=&quot;app&quot;&gt;<br>    &lt;router-view/&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br><br>&lt;style&gt;<br>html,body,<br>#app&#123;<br>  width: 100%;<br>  height: 100%;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>opencv-py</title>
       <link href="/2023/02/12/opencv-py/"/>
       <url>/2023/02/12/opencv-py/</url>
