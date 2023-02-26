@@ -4,11 +4,24 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2023/02/23/Vue-Vite-ts/"/>
-      <url>/2023/02/23/Vue-Vite-ts/</url>
+      <title>資料結構</title>
+      <link href="/2023/02/26/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/"/>
+      <url>/2023/02/26/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/</url>
       
-        <content type="html"><![CDATA[<hr><h2 id="title-Vue-Vite-tsdate-2023-02-23-01-29-25tags"><a href="#title-Vue-Vite-tsdate-2023-02-23-01-29-25tags" class="headerlink" title="title: Vue+Vite+tsdate: 2023-02-23 01:29:25tags:"></a>title: Vue+Vite+ts<br>date: 2023-02-23 01:29:25<br>tags:</h2><p>*如果遇到可讀狀態 sudo chown -R [使用者名稱] [項目名稱] * </p><p>##＃ 前端項目項目配置(Vite)</p><ol><li>使用vite| npm init vite@latest</li><li>安裝nvm | brew install nvm</li><li>安裝node| brew install node</li><li>Vite選擇Vue和typeScript</li><li>安裝package.json依賴| npm instal</li><li>啟動項目| sudo npm run dev</li></ol><p>##＃ 前端項目配置(Vue)</p><ol><li>安裝Vue腳手架| npm init vue@latest -&gt;一路yes到底</li><li>npm install</li></ol><h2 id="1-認識目錄-amp-SFC-插件介紹和npm-run-dev過程"><a href="#1-認識目錄-amp-SFC-插件介紹和npm-run-dev過程" class="headerlink" title="1.認識目錄&amp;SFC | 插件介紹和npm run dev過程"></a>1.認識目錄&amp;SFC | 插件介紹和npm run dev過程</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="1-練表"><a href="#1-練表" class="headerlink" title="1.練表"></a>1.練表</h2><h3 id="練表是什麼？數組又是什麼？"><a href="#練表是什麼？數組又是什麼？" class="headerlink" title="練表是什麼？數組又是什麼？"></a>練表是什麼？數組又是什麼？</h3><ul><li><p>線性表<br>  線性表 “線性儲存結構” -&gt; 一根線能串起來的數組 儲存到物理空間(順序)<br>  數組 &#x3D;&gt; 線性表<br>  好處是儲存地址具有順序性</p><p>  數據間要有相同的數據類型，元素之間的關係需要一對一(鏈式)<br>  鍊表<br>  儲存物理位置無順序，插入和刪除比較方便</p></li><li><p>練表<br>  分為有頭節點的鏈表和沒有頭節點的鏈表<br>  插入的時候 分為頭插法和尾插法<br>  節點的關西稱之為前置節點和後記節點<br>  節點的構成包含數據本身以及對後記節點的引用</p></li></ul><h3 id="練表和數組的區別整理"><a href="#練表和數組的區別整理" class="headerlink" title="練表和數組的區別整理"></a>練表和數組的區別整理</h3><p>優點：鍊錶實現了真正的動態，不需要處理固定容量帶來的問題<br>缺點：失去隨機訪問能力</p><p>鏈表：增刪快，查詢慢<br>數組：查詢快，增刪慢</p><p>單鏈錶： 數據＋下一個節點的引用<br>雙鏈錶：數據＋下一個節點的引用＋上一個節點的引用</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2023/02/23/Vue3/"/>
+      <url>/2023/02/23/Vue3/</url>
+      
+        <content type="html"><![CDATA[<hr><h2 id="title-Vue-Vite-tsdate-2023-02-23-01-29-25tags"><a href="#title-Vue-Vite-tsdate-2023-02-23-01-29-25tags" class="headerlink" title="title: Vue+Vite+tsdate: 2023-02-23 01:29:25tags:"></a>title: Vue+Vite+ts<br>date: 2023-02-23 01:29:25<br>tags:</h2><p>*如果遇到可讀狀態 sudo chown -R [使用者名稱] [項目名稱] * </p><p>##＃ 前端項目項目配置(Vite)</p><ol><li>使用vite| npm init vite@latest</li><li>安裝nvm | brew install nvm</li><li>安裝node| brew install node</li><li>Vite選擇Vue和typeScript</li><li>安裝package.json依賴| npm instal</li><li>啟動項目| sudo npm run dev</li></ol><p>##＃ 前端項目配置(Vue)</p><ol><li>安裝Vue腳手架| npm init vue@latest -&gt;一路yes到底</li><li>npm install</li></ol><h3 id="虛擬DOM和diff算法"><a href="#虛擬DOM和diff算法" class="headerlink" title="虛擬DOM和diff算法"></a>虛擬DOM和diff算法</h3><h3 id="響應式是什麼？"><a href="#響應式是什麼？" class="headerlink" title="響應式是什麼？"></a>響應式是什麼？</h3><ul><li>如果非響應式會怎麼樣？</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;template&gt;<br>  &lt;div&gt;<br>    &#123;&#123; Man &#125;&#125;<br>  &lt;/div&gt;<br>  &lt;hr /&gt;<br>  &lt;button @click=&quot;change&quot;&gt;Change&lt;/button&gt;<br>&lt;/template&gt;<br><br>&lt;script setup lang=&quot;ts&quot;&gt;<br>const Man = &#123; name: &quot;小楷&quot; &#125;;<br>const change = () =&gt; &#123;<br>  Man.name = &quot;小欣&quot;;<br>  console.log(Man.name);<br>&#125;;<br>&lt;/script&gt;<br><br></code></pre></td></tr></table></figure><pre><code class="hljs">- 使用npm run dev後發現點擊時console.log出現的確實是小欣但頁面沒改變</code></pre><ul><li><p>響應式</p><ul><li>Ref &#x3D;&gt; 返回的ES6的Class，需要使用value材能取直或修改  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs Vue">&lt;template&gt;<br>  &lt;div&gt;<br>    &#123;&#123; Man &#125;&#125;<br>  &lt;/div&gt;<br>  &lt;hr /&gt;<br>  &lt;button @click=&quot;change&quot;&gt;Change&lt;/button&gt;<br>&lt;/template&gt;<br><br>&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123; ref &#125; from &quot;vue&quot;;<br>const Man = ref(&#123; name: &quot;小欣&quot; &#125;);<br>const change = () =&gt; &#123;<br>  Man.value.name = &quot;小楷&quot;;<br>  console.log(Man.value.name);<br>&#125;;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure><ul><li>isRef 確認是否為Ref對象</li><li>shallowRef<br>  ref 深層次 , shallowRef 淺層次響應&#x3D;&gt;大數據量推存</li></ul></li><li>Recative</li></ul></li></ul>]]></content>
       
       
       
@@ -43,19 +56,6 @@
     
     
     <entry>
-      <title>深入頗析k8s</title>
-      <link href="/2023/01/24/%E6%B7%B1%E5%85%A5%E9%A0%97%E6%9E%90k8s/"/>
-      <url>/2023/01/24/%E6%B7%B1%E5%85%A5%E9%A0%97%E6%9E%90k8s/</url>
-      
-        <content type="html"><![CDATA[<p><code>預先在本機端安裝好ubuntu</code><br><a href="https://zhuanlan.zhihu.com/p/59548929">https://zhuanlan.zhihu.com/p/59548929</a></p><h2 id="Part1-Kubernetes基礎"><a href="#Part1-Kubernetes基礎" class="headerlink" title="Part1. Kubernetes基礎"></a>Part1. Kubernetes基礎</h2><h3 id="容器技術基礎"><a href="#容器技術基礎" class="headerlink" title="容器技術基礎"></a>容器技術基礎</h3>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>2023</title>
       <link href="/2023/01/24/2023/"/>
       <url>/2023/01/24/2023/</url>
@@ -69,19 +69,6 @@
             <tag> 2023 </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>cs231n</title>
-      <link href="/2023/01/15/cs231n/"/>
-      <url>/2023/01/15/cs231n/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
       
     </entry>
     
